@@ -736,6 +736,19 @@ body {
             font-size: 0.88rem;
         }
 
+        .worker-move-select {
+            display: none;
+            box-sizing: border-box;
+            width: 100%;
+            min-height: 38px;
+            border: 1px solid #cbd4de;
+            border-radius: 6px;
+            background: #fff;
+            color: #25364a;
+            font: inherit;
+            font-size: 0.9rem;
+        }
+
         .zone-controls {
             align-items: flex-start;
             flex-wrap: wrap;
@@ -861,6 +874,19 @@ body {
             body {
                 width: calc(100% - 24px);
                 margin-top: 14px;
+            }
+
+            .worker {
+                display: inline-flex;
+                min-width: min(170px, 100%);
+                max-width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 6px;
+            }
+
+            .worker-move-select {
+                display: block;
             }
 
             .stats-grid {
