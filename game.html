@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Warehouse Manager Prototype</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<header class="dashboard-header">
+    <div>
+        <p class="eyebrow">WAREHOUSE OPERATIONS</p>
+        <h1>Warehouse Manager</h1>
+    </div>
+    <div class="day-display">DAY <strong id="day">1</strong></div>
+</header>
+
+<section class="stats-grid" aria-label="Warehouse status">
+    <div class="stat-card cash-stat">
+        <span class="stat-label">Available cash</span>
+        <strong>$<span id="cash">1000</span></strong>
+    </div>
+    <div class="stat-card tk-stat">
+        <span class="stat-label">Tribal knowledge</span>
+        <strong><span id="tribalKnowledge">0</span> TK</strong>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Employees</span>
+        <strong id="workers">3</strong>
+    </div>
+    <div class="stat-card">
+        <span class="stat-label">Orders in backlog</span>
+        <strong id="backlog">0</strong>
+    </div>
+</section>
+
+<nav class="action-bar" aria-label="Game actions">
+    <div class="primary-actions">
+        <button id="nextDayButton" class="button-primary">Start Next Day</button>
+        <button id="erpButton">Open Operations ERP</button>
+    </div>
+    <button id="traitVisibilityButton" class="button-progression">
+        Unlock Pre-Hire Trait Visibility (5 TK)
+    </button>
+</nav>
+
+<main>
+<section class="warehouse" aria-label="Warehouse areas">
+
+  <div class="zone">
+      <div class="zone-heading">
+          <div><p class="eyebrow">INBOUND</p><h2>Receiving</h2></div>
+          <span class="capacity-badge" id="receivingCap"></span>
+      </div>
+      <div class="workerArea" id="receivingWorkers" data-zone="receiving"></div>
+      <div class="zone-controls"><p id="receivingStaff"></p><button id="receivingCapacityUpgrade">+1 staff slot · $500</button></div>
+      <div class="orders-heading">Orders waiting</div>
+      <div class="orderArea" id="receivingZone"></div>
+  </div>
+
+  <div class="zone">
+      <div class="zone-heading">
+          <div><p class="eyebrow">INVENTORY</p><h2>Storage</h2></div>
+          <span class="capacity-badge" id="storageCap"></span>
+      </div>
+      <div class="workerArea" id="storageWorkers" data-zone="storage"></div>
+      <div class="zone-controls"><p id="storageStaff"></p><button id="storageCapacityUpgrade">+1 staff slot · $500</button></div>
+      <div class="orders-heading">Orders waiting</div>
+      <div class="orderArea" id="storageZone"></div>
+  </div>
+
+  <div class="zone">
+      <div class="zone-heading">
+          <div><p class="eyebrow">FULFILLMENT</p><h2>Picking</h2></div>
+          <span class="capacity-badge" id="pickingCap"></span>
+      </div>
+      <div class="workerArea" id="pickingWorkers" data-zone="picking"></div>
+      <div class="zone-controls"><p id="pickingStaff"></p><button id="pickingCapacityUpgrade">+1 staff slot · $500</button></div>
+      <div class="orders-heading">Orders waiting</div>
+      <div class="orderArea" id="pickingZone"></div>
+  </div>
+
+  <div class="zone">
+      <div class="zone-heading">
+          <div><p class="eyebrow">FULFILLMENT</p><h2>Packing</h2></div>
+          <span class="capacity-badge" id="packingCap"></span>
+      </div>
+      <div class="workerArea" id="packingWorkers" data-zone="packing"></div>
+      <div class="zone-controls"><p id="packingStaff"></p><button id="packingCapacityUpgrade">+1 staff slot · $500</button></div>
+      <div class="orders-heading">Orders waiting</div>
+      <div class="orderArea" id="packingZone"></div>
+  </div>
+
+  <div class="zone">
+      <div class="zone-heading">
+          <div><p class="eyebrow">OUTBOUND</p><h2>Shipping</h2></div>
+          <span class="capacity-badge" id="shippingCap"></span>
+      </div>
+      <div class="workerArea" id="shippingWorkers" data-zone="shipping"></div>
+      <div class="zone-controls"><p id="shippingStaff"></p><button id="shippingCapacityUpgrade">+1 staff slot · $500</button></div>
+      <div class="orders-heading">Orders waiting</div>
+      <div class="orderArea" id="shippingZone"></div>
+  </div>
+
+</section>
+</main>
+
+<aside id="log" class="event-notifications" aria-label="Event notifications" aria-live="polite"></aside>
+
+<div id="draftModal" class="modal hidden">
+
+    <div class="modalContent">
+
+        <h2>Weekly Hiring Draft</h2>
+
+        <div id="candidateList"></div>
+
+        <button id="skipDraftButton">
+            Skip Draft (+$250)
+        </button>
+
+    </div>
+
+</div>
+
+<div id="erpModal" class="erpModal hidden">
+
+    <div class="erpWindow">
+
+        <div class="erpHeader">
+            <h2>Omnicorp ERP 2007</h2>
+            <button id="closeERP">X</button>
+        </div>
+
+        <div class="erpBody">
+
+            <div class="erpSidebar">
+
+                <button class="erpTab" id="employeeTab">
+                    Employees
+                </button>
+
+                <button class="erpTab" id="recruitmentTab">
+                    Recruitment
+                </button>
+
+                <button class="erpTab" id="equipmentTab">
+                    Equipment
+                </button>
+
+            </div>
+
+            <div class="erpContent">
+
+                <div id="employeeList"></div>
+
+                <div id="employeeProfile">
+
+                    <h3>Select an Employee</h3>
+
+                </div>
+
+                <div id="equipmentShop" class="hidden"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="module" src="main.js"></script>
+
+
+</body>
+</html>
