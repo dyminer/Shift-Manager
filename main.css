@@ -205,6 +205,18 @@ body {
             padding: 15px;
         }
 
+        #employeeWorkspace {
+            display: flex;
+            min-width: 0;
+            min-height: 0;
+            flex: 1 1 auto;
+            overflow: hidden;
+        }
+
+        #employeeWorkspace.hidden {
+            display: none;
+        }
+
         #employeeList {
             box-sizing: border-box;
             flex: 0 0 250px;
@@ -228,8 +240,9 @@ body {
 
         #employeeProfile {
             box-sizing: border-box;
-            flex: 1 1 0;
+            flex: 1 1 auto;
             min-width: 0;
+            width: 0;
             padding: 15px;
             overflow-y: auto;
         }

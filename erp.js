@@ -63,15 +63,13 @@ export function renderEmployeeList() {
 }
 
 export function showEmployeeSection() {
-    document.getElementById("employeeList").classList.remove("hidden");
-    document.getElementById("employeeProfile").classList.remove("hidden");
+    document.getElementById("employeeWorkspace").classList.remove("hidden");
     document.getElementById("equipmentShop").classList.add("hidden");
     renderEmployeeList();
 }
 
 export function openEquipmentShop() {
-    document.getElementById("employeeList").classList.add("hidden");
-    document.getElementById("employeeProfile").classList.add("hidden");
+    document.getElementById("employeeWorkspace").classList.add("hidden");
     document.getElementById("equipmentShop").classList.remove("hidden");
     renderEquipmentShop();
 }
