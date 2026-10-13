@@ -1,3 +1,5 @@
+import { createRandomWorkerTraits } from "./traits.js";
+
 export const gameState = {
 
 day : 1,
@@ -19,13 +21,7 @@ workers : [
     productivity: 5,
     reliability: 5,
     morale: 5,
-    traits: [
-        { id: "receiving-specialist" },
-        { id: "storage-organizer" },
-        { id: "receiving-rushed" },
-        { id: "picking-distracted" },
-        { id: "mentor" }
-    ],
+    traits: createRandomWorkerTraits(),
     discoveredTraitIds: [],
     knowledgeAwardedTraitIds: []
 },
@@ -36,13 +32,7 @@ workers : [
     productivity: 5,
     reliability: 5,
     morale: 5,
-    traits: [
-        { id: "careful-packer" },
-        { id: "shipping-veteran" },
-        { id: "receiving-rushed" },
-        { id: "shipping-slowdown" },
-        { id: "team-player" }
-    ],
+    traits: createRandomWorkerTraits(),
     discoveredTraitIds: [],
     knowledgeAwardedTraitIds: []
 },
@@ -53,13 +43,7 @@ workers : [
     productivity: 5,
     reliability: 5,
     morale: 5,
-    traits: [
-        { id: "shipping-veteran" },
-        { id: "quick-picker" },
-        { id: "storage-careless" },
-        { id: "packing-impatient" },
-        { id: "disruptive" }
-    ],
+    traits: createRandomWorkerTraits(),
     discoveredTraitIds: [],
     knowledgeAwardedTraitIds: []
 }

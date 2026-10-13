@@ -160,13 +160,26 @@ function chooseRandomTraits(traits, count) {
 }
 
 export function createRandomWorkerTraits() {
+    const positiveAreaTraits = chooseRandomTraits(positiveTraits, 2);
+    const positiveZones = new Set(
+        positiveAreaTraits.map(trait => trait.zone)
+    );
+    const compatibleNegativeTraits = negativeTraits.filter(
+        trait => !positiveZones.has(trait.zone)
+    );
     const traits = [
-        ...chooseRandomTraits(positiveTraits, 2),
-        ...chooseRandomTraits(negativeTraits, 2)
+        ...positiveAreaTraits,
+        ...chooseRandomTraits(compatibleNegativeTraits, 2)
     ];
 
     if (Math.random() < 0.5) {
         traits.push(...chooseRandomTraits(coworkerTraits, 1));
+    }
+
+    for (let index = traits.length - 1; index > 0; index--) {
+        const swapIndex = Math.floor(Math.random() * (index + 1));
+        [traits[index], traits[swapIndex]] =
+            [traits[swapIndex], traits[index]];
     }
 
     return traits.map(({ id }) => ({ id }));

@@ -206,11 +206,9 @@ body {
         }
 
         #employeeList {
-
-            width: 250px;
-
+            box-sizing: border-box;
+            flex: 0 0 250px;
             border-right: 1px solid #ccc;
-
             overflow-y: auto;
         }
 
@@ -229,15 +227,15 @@ body {
         }
 
         #employeeProfile {
-
-            flex: 1;
-
+            box-sizing: border-box;
+            flex: 1 1 0;
+            min-width: 0;
             padding: 15px;
+            overflow-y: auto;
         }
 
         #equipmentShop {
             box-sizing: border-box;
-            display: block;
             flex: 1;
             min-width: 0;
             min-height: 0;
@@ -846,11 +844,6 @@ body {
             min-width: 0;
         }
 
-        #employeeProfile {
-            min-width: 0;
-            overflow-y: auto;
-        }
-
         @media (max-width: 700px) {
             body {
                 width: calc(100% - 24px);
@@ -900,8 +893,9 @@ body {
             }
 
             #employeeList {
-                width: 35%;
+                flex: 0 0 35%;
                 min-width: 95px;
+                max-width: 150px;
             }
 
             #employeeProfile {
