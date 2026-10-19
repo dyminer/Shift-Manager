@@ -25,21 +25,21 @@ export const equipmentCatalog = [
         name: "Powered Conveyor",
         description: "+1 productivity for every employee in this area.",
         price: 400,
-        attributeBonuses: { productivity: 1 }
+        attributeBonuses: { productivity: 1 * gameState.workers.filter(worker => worker.zone === zone).length }
     },
     {
         id: "quality-scanner",
         name: "Quality Scanner",
         description: "+2 reliability for every employee in this area.",
         price: 500,
-        attributeBonuses: { reliability: 2 }
+        attributeBonuses: { reliability: 2 * gameState.workers.filter(worker => worker.zone === zone).length }
     },
     {
         id: "comfort-station",
         name: "Comfort Station",
         description: "+2 morale for every employee in this area.",
         price: 500,
-        attributeBonuses: { morale: 2 }
+        attributeBonuses: { morale: 2 * gameState.workers.filter(worker => worker.zone === zone).length }
     },
     {
         id: "process-library",
