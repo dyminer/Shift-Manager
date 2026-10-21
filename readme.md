@@ -1,5 +1,7 @@
 # Warehouse Manager
 
+Playable Link: https://dyminer.github.io/Shift-Manager/game.html
+
 A browser-based warehouse operations game inspired by the realities of working in fast-paced fulfillment environments.
 
 Built by Dylan Miner, this project simulates the daily challenge of keeping orders moving through a warehouse while managing staffing, equipment, hiring, and operational bottlenecks.
