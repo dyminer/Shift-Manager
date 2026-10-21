@@ -19,27 +19,28 @@ export function formatZoneName(zone) {
     return `${zone[0].toUpperCase()}${zone.slice(1)}`;
 }
 
+
 export const equipmentCatalog = [
     {
         id: "powered-conveyor",
         name: "Powered Conveyor",
         description: "+1 productivity for every employee in this area.",
         price: 400,
-        attributeBonuses: { productivity: 1 * gameState.workers.filter(worker => worker.zone === zone).length }
+        attributeBonuses: { productivity: 1 }
     },
     {
         id: "quality-scanner",
         name: "Quality Scanner",
         description: "+2 reliability for every employee in this area.",
         price: 500,
-        attributeBonuses: { reliability: 2 * gameState.workers.filter(worker => worker.zone === zone).length }
+        attributeBonuses: { reliability: 2 }
     },
     {
         id: "comfort-station",
         name: "Comfort Station",
         description: "+2 morale for every employee in this area.",
         price: 500,
-        attributeBonuses: { morale: 2 * gameState.workers.filter(worker => worker.zone === zone).length }
+        attributeBonuses: { morale: 2 }
     },
     {
         id: "process-library",
